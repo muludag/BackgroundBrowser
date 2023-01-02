@@ -21,6 +21,8 @@ namespace BackgroundBrowser
             tab = obj as TabPage;
             InitializeEdge();
             InitializeAsync();
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+
         }
         protected override CreateParams CreateParams
         {

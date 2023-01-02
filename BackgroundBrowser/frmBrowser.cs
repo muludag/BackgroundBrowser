@@ -117,7 +117,11 @@ namespace BackgroundBrowser
                     {
                         UserControl1 uc = ctrl as UserControl1;
                         uc.panelMenu.Visible = panelvisible;
-
+                        foreach (Control c in uc.panelMenu.Controls)
+                        {
+                            c.Visible = panelvisible;
+                            c.Invalidate();
+                        }
                         foreach (Control c in ctrl.Controls)
                         {
                             if (!(c is Microsoft.Web.WebView2.WinForms.WebView2))
